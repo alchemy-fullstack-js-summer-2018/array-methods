@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map } = require('../lib/array-methods.js');
+const { map, filter } = require('../lib/array-methods.js');
 
 describe('array methods', () => {
 
@@ -45,4 +45,25 @@ describe('array methods', () => {
             assert.deepEqual(result, []);
         });
     });
+
+
+    describe('filter', () => {
+
+        describe('assumption', () => {
+
+            it('should extract all numbers greater than 10', () => {
+                const numbers = [0, 5, 10, 15, 20];
+                const result = numbers.filter(n => n > 10);
+                assert.deepEqual(result, [15, 20]);
+            });
+        });
+
+        it('should extract all numbers greater than 10', () => {
+            const numbers = [0, 5, 10, 15, 20];
+            const result = filter(numbers, n => n > 10);
+            assert.deepEqual(result, [15, 20]);
+        });
+        
+    });
+
 });
