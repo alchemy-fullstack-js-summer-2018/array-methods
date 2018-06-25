@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map, filter } = require('../lib/array-methods.js');
+const { map, filter, findIndex } = require('../lib/array-methods.js');
 
 describe('array methods', () => {
 
@@ -76,6 +76,23 @@ describe('array methods', () => {
             assert.deepEqual(result, []);
         });
         
+    });
+
+    describe('findIndex', () => {
+        describe('assumption', () => {
+
+            it('should find the index of the first 5 (3)', () => {
+                const numbers = [2, 6, 8, 5, 5];
+                const result = numbers.findIndex(n => n === 5);
+                assert.equal(result, 3);
+            });
+        });
+
+        it('should find the index of 5 (3)', () => {
+            const numbers = [2, 6, 8, 5, 9];
+            const result = findIndex(numbers, n => n === 5);
+            assert.equal(result, 3);
+        });
     });
 
 });
