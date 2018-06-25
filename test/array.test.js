@@ -3,9 +3,9 @@ const { map } = require('../lib/arrays');
 
 
 describe('array methods', () => {
-    it('creates new array', () => {
+    it('Map: Creates new array', () => {
         const array = [2, 4, 6]; 
-        const newArray = array.map;
-        assert.equal(newArray, [3, 5, 7]);
+        const newArray = map(array, (item) => { return item + 1;});
+        assert.deepEqual(newArray, [3, 5, 7]);
     });
 });
