@@ -11,6 +11,6 @@ describe('array methods', () => {
     it('Filter: Selecting specific items from an array', () => {
         const numbers = [1, 4, 8];
         const newNumbers = filter(numbers, (item) => {return item >3 })
-        assert.equal(newNumbers, [4, 8]);
+        assert.equal(newNumbers, true);
     });
 });
