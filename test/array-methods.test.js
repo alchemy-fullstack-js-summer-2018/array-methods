@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { some } = require('../lib/array-methods');
+const { some, map } = require('../lib/array-methods');
 
 describe('array methods', () => {
 //marty's in class some example
@@ -56,12 +56,13 @@ describe('array methods', () => {
             assert.deepEqual(called, [1, 4]);
         });
     });
-    // //begin classwork tests
-    // describe('map', () => {
-
-    //         describe('assumptions', () => {
-
-    //         })
-    // })
+    //begin classwork tests
+    describe('map', () => {
+        it('should be a direct copy of original array', () => {
+            const numbers = [1, 2, 3, 4];
+            const result = map(numbers, (n) => n * n);
+            assert.deepEqual(result, [1, 4, 9, 16]);
+        });
+    });
 });
 
