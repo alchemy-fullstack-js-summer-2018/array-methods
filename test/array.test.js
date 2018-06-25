@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map } = require('../lib/arrays');
+const { map, filter } = require('../lib/arrays');
 
 
 describe('array methods', () => {
@@ -10,7 +10,7 @@ describe('array methods', () => {
     });
     it('Filter: Selecting specific items from an array', () => {
         const numbers = [1, 4, 8];
-        const evenNumbers = filter(numbers, (item) => {return item >3 })
-        assert.equal(evenNumbers, [4, 8]);
+        const newNumbers = filter(numbers, (item) => {return item >3 })
+        assert.equal(newNumbers, [4, 8]);
     });
 });
