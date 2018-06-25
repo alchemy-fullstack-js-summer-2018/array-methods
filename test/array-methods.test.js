@@ -13,13 +13,24 @@ describe('array methods', () => {
                 assert.deepEqual(result, [6, 9, 125, 1]);
             });
 
+            it('should return the length of each string', () => {
+                const strings = ['banji', 'jimingo', 'poochy'];
+                const result = strings.map(s => s.length);
+                assert.deepEqual(result, [5, 7, 6]);
+            });
         });
-
-
+        
+        
         it('should add 1 to each number', () => {
             const numbers = [5, 8, 124, 0];
             const result = map(numbers, n => n + 1);
             assert.deepEqual(result, [6, 9, 125, 1]);
+        });
+        
+        it('should return the length of each string', () => {
+            const strings = ['banji', 'jimingo', 'poochy'];
+            const result = strings.map(s => s.length);
+            assert.deepEqual(result, [5, 7, 6]);
         });
 
     });
