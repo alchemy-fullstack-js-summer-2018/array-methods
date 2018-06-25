@@ -56,12 +56,24 @@ describe('array methods', () => {
                 const result = numbers.filter(n => n > 10);
                 assert.deepEqual(result, [15, 20]);
             });
-        });
 
+            it('should return an empty array', () => {
+                const numbers = [];
+                const result = numbers.filter(n => n < 0);
+                assert.deepEqual(result, []);
+            });
+        });
+        
         it('should extract all numbers greater than 10', () => {
             const numbers = [0, 5, 10, 15, 20];
             const result = filter(numbers, n => n > 10);
             assert.deepEqual(result, [15, 20]);
+        });
+
+        it('should return an empty array', () => {
+            const numbers = [];
+            const result = filter(numbers, n => n < 0);
+            assert.deepEqual(result, []);
         });
         
     });
