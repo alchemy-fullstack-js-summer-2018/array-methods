@@ -11,5 +11,11 @@ describe('array methods', () => {
         assert.deepEqual(arr2, [2,3,4]);     
     });
 
-    
+    it('Filter', () => {
+        const arr1 = [2, 5, 9];
+        const arr2 = filter(arr1, (item) => {
+            return item >= 5;
+        });
+        assert.equal(arr2, [5,9]);
+    });
 });
