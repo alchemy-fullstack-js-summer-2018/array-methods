@@ -25,11 +25,6 @@ describe('array methods', () => {
                 const evens = numbers.filter(n => n % 2 === 0);
                 assert.deepEqual(evens, [4, 8]);
             });
-            it('should return an empty array if given an empty array', () => {
-                const numbers = [];
-                const evens = numbers.filter(n => n % 2 === 0);
-                assert.deepEqual(evens, []);
-            });
         });
 
         it('takes callback and returns new array with all items whose callback returned truthy', () => {
@@ -37,10 +32,15 @@ describe('array methods', () => {
             const odds = filter(numbers, n => n % 2 === 1);
             assert.deepEqual(odds, [3, 7]);
         });
-        it('takes callback and returns new array with all items whose callback returned truthy', () => {
-            const numbers = [];
-            const odds = filter(numbers, n => n % 2 === 1);
-            assert.deepEqual(odds, []);
+    });
+
+    describe('findIndex', () => {
+        describe('assumptions', () => {
+            it('takes a callback and returns the first item whose callback returned truthy', () => {
+                const numbers = [1, 4, 11, 15];
+                const index = numbers.findIndex(n => n > 10);
+                assert.deepEqual(index, 2);
+            });
         });
     });
 });
