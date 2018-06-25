@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map } = require('../lib/array-methods');
+const { map, filter } = require('../lib/array-methods');
 
 describe('array methods', () => {
     describe('map', () => {
@@ -25,6 +25,12 @@ describe('array methods', () => {
                 const evens = numbers.filter(n => n % 2 === 0);
                 assert.deepEqual(evens, [4, 8]);
             });
+        });
+
+        it('takes callback and returns new array with all items whose callback returned truthy', () => {
+            const numbers = [3, 6, 7, 8, 10];
+            const odds = filter(numbers, n => n % 2 === 1);
+            assert.deepEqual(odds, [3, 7]);
         });
     });
 });
