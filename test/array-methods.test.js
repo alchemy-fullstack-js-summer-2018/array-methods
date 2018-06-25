@@ -2,7 +2,7 @@ const assert = require('assert');
 const { some } = require('../lib/array-methods');
 
 describe('array methods', () => {
-
+//marty's in class some example
     describe('some', () => {
 
         const isEven = x => x % 2 === 0;
@@ -55,7 +55,13 @@ describe('array methods', () => {
 
             assert.deepEqual(called, [1, 4]);
         });
-
     });
+    // //begin classwork tests
+    // describe('map', () => {
+
+    //         describe('assumptions', () => {
+
+    //         })
+    // })
 });
 

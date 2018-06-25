@@ -1,4 +1,3 @@
-# blacklist
-branches:
-  except:
-    - master
+languange: node_js
+node_js: "10"
+
