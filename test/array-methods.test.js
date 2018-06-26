@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map, filter, findIndex, reduce } = require('../lib/array-methods');
+const { map, filter, findIndex, reduce, every } = require('../lib/array-methods');
 
 describe ('array methods', () => {
 
@@ -87,6 +87,29 @@ describe ('array methods', () => {
             const numbers = [1, 2, 3, 4];
             const result = reduce(numbers, (a, c) => a + c);
             assert.equal(result, 10);
+        });
+    });
+
+    describe('every', () => {
+        
+        describe('assumptions', () => {
+            it('returns true if every value is odd in the array', () => {
+                const numbers = [1, 3, 5];
+                const result = numbers.every(i => i % 2 === 1);
+                assert.equal(result, true);
+            });
+        });
+
+        it('returns true if every value is odd in the array', () => {
+            const numbers = [1, 3, 5];
+            const result = every(numbers, i => i % 2 === 1);
+            assert.equal(result, true);
+        });
+
+        it('returns false if one value in the array is not odd', () => {
+            const numbers = [1, 2, 3];
+            const result = every(numbers, i => i % 2 === 1);
+            assert.equal(result, false);
         });
     });
 });
