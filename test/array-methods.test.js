@@ -34,6 +34,6 @@ describe('array methods', () => {
         const reducedValue = reduce(arr, (accumulator, currentValue) => { 
             return accumulator + currentValue;
         });
-        assert.equal(reducedValue, 15);
+        assert.equal(reducedValue, 16);
     });    
 });
