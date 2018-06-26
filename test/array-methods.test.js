@@ -51,4 +51,12 @@ describe('Array Methods', () => {
             assert.deepEqual(result, 17);
         });
     });
+
+    // describe('.every()', () => {
+
+    //     it('Returns true if every array item meets the given test', () => {
+    //         const arr = [2, 4, 6, 8, 10];
+    //         const result =
+    //     });
+    // });
 });
