@@ -3,7 +3,7 @@ const aMeth = require('../lib/array-methods');
 const myMap = aMeth.myMap;
 const myFilter = aMeth.myFilter;
 const myFindIndex = aMeth.myFindIndex;
-// const myReduce = aMeth.myReduce;
+const myReduce = aMeth.myReduce;
 // const myEvery = aMeth.myEvery;
 
 describe('array methods', () => {
@@ -36,4 +36,5 @@ describe('array methods', () => {
             assert.deepEqual(result, -1);
         });
     });
+    describe()
 });
