@@ -122,11 +122,11 @@ describe('array methods', () => {
             });
         });
         
-        it('should find the index of 5 (5)', () => {
+        it('should find the index of 5 (4)', () => {
             //eslint-disable-next-line
             const numbers = [, 2, 6, 8, 5, 5];
             const result = findIndex(numbers, n => n === 5);
-            assert.equal(result, 5);
+            assert.equal(result, 4);
         });
 
         it('should return -1 when nothing is found', () => {
@@ -140,8 +140,9 @@ describe('array methods', () => {
 
         describe('assumption', () => {
 
-            it('should add up all the items in the array', () => {
-                const numbers = [1, 2, 3, 4, 5];
+            it('should add up all the items in the array, skipping holes', () => {
+                //eslint-disable-next-line
+                const numbers = [1, 2, 3, , 4, 5];
                 const result = numbers.reduce((c, i) => c + i);
                 assert.equal(result, 15);
             });
@@ -182,8 +183,9 @@ describe('array methods', () => {
             });
         });
         
-        it('should add up all the items in the array', () => {
-            const numbers = [1, 2, 3, 4, 5];
+        it('should add up all the items in the array, skipping holes', () => {
+            //eslint-disable-next-line
+            const numbers = [1, 2, 3, , 4, 5];
             const result = reduce(numbers, (c, i) => c + i);
             assert.equal(result, 15);
         });
