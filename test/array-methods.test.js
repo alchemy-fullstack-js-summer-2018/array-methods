@@ -238,13 +238,15 @@ describe('array methods', () => {
             });
 
             it('should return false for any item failing the callback', () => {
-                const numbers = [4, 5, 6, 7];
+                //eslint-disable-next-line
+                const numbers = [4, 5, , 6, 7];
                 const result = numbers.every(n => n === 4);
                 assert.equal(result, false);
             });
             
             it('should return true for any callback given an empty array', () => {
-                const numbers = [];
+                //eslint-disable-next-line
+                const numbers = [,];
                 const result = numbers.every(n => n < 9000);
                 assert.equal(result, true);
             });
@@ -257,13 +259,15 @@ describe('array methods', () => {
         });
 
         it('should return false for any item failing the callback', () => {
-            const numbers = [4, 5, 6, 7];
+            //eslint-disable-next-line
+            const numbers = [4, 5, , 6, 7];
             const result = every(numbers, n => n === 4);
             assert.equal(result, false);
         });
         
         it('should return true for any callback given an empty array', () => {
-            const numbers = [];
+            //eslint-disable-next-line
+            const numbers = [,];
             const result = every(numbers, n => n < 9000);
             assert.equal(result, true);
         });
@@ -274,7 +278,8 @@ describe('array methods', () => {
         describe('assumptions', () => {
 
             it('should execute the callback on each item', () => {
-                let numbers = [2, 3, 4, 5, 100];
+                //eslint-disable-next-line
+                let numbers = [2, 3, 4, , 5, 100];
                 let closure = [];
                 numbers.forEach(n => closure.push(n * 2));
                 assert.deepEqual(closure, [4, 6, 8, 10, 200]);
@@ -282,7 +287,8 @@ describe('array methods', () => {
         });
 
         it('should execute the callback on each item', () => {
-            let numbers = [2, 3, 4, 5, 100];
+            //eslint-disable-next-line
+            let numbers = [2, 3, 4, , 5, 100];
             let closure = [];
             forEach(numbers, n => closure.push(n * 2));
             assert.deepEqual(closure, [4, 6, 8, 10, 200]);
