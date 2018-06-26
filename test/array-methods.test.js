@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { some, map, filter } = require('../lib/array-methods');
+const { some, map, filter, findIndex, reduce } = require('../lib/array-methods');
 
 describe('array methods', () => {
 //marty's in class some example
@@ -70,6 +70,27 @@ describe('array methods', () => {
             const numbers = [1, 2, 3, 4, 5, 6];
             const result = filter(numbers, (n) => n < 4);
             assert.deepEqual(result, [1, 2, 3]);
+        });
+    });
+    describe('findIndex', () => {
+        it('returns first truthy item in array', () => {
+            const numbers = [1, 2, 3, 4, 5];
+            const result = findIndex(numbers, (n) => n > 3);
+            assert.deepEqual(result, 3);
+        });
+
+        it('returns -1 if item not found', () => {
+            const numbers = [1, 2, 3, 4, 5];
+            const result = findIndex(numbers, (n) => n > 5);
+            assert.deepEqual(result, -1);
+        });
+    });
+
+    describe('reduce', () => {
+        it('returns the sum of all array items', () => {
+            const numbers = [1, 5, 4, 2, 3];
+            const result = reduce(numbers, (a, b) => (a + b));
+            assert.deepEqual(result, 15);
         });
     });
 });
