@@ -65,35 +65,35 @@ describe('array methods', () => {
         describe('reduce assumptions', () => {
             it('REDUCE returns the sum of all the numbers in an array', () => {
                 const numbers = testers;
-                const result = numbers.reduce((acc, item) => acc + item, 0);
-                assert.equal(result, 15);
+                const result = numbers.reduce((acc, item) => acc + item, -20);
+                assert.equal(result, -5);
             });
             it('returns the sum of all the numbers in an array, bigger', () => {
                 const numbers = [10, 20, 30];
-                const result = numbers.reduce((acc, item) => acc + item, 5);
-                assert.equal(result, 65);
+                const result = numbers.reduce((acc, item) => acc + item, 0);
+                assert.equal(result, 60);
             });
             it('REDUCE returns the difference of all the numbers in an array, bigger', () => {
                 const numbers = [10, 20, 30];
-                const result = numbers.reduce((acc, item) => acc - item, 0);
-                assert.equal(result, -60);
+                const result = numbers.reduce((acc, item) => acc - item, 20);
+                assert.equal(result, -40);
             });
         });
 
         it('returns the sum of all the numbers in an array', () => {
             const numbers = testers;
-            const result = reduce(numbers, (acc, item) => (acc + item), 0);
-            assert.equal(result, 15);
+            const result = reduce(numbers, (acc, item) => (acc + item), -20);
+            assert.equal(result, -5);
         });
         it('returns the sum of all the numbers in an array, bigger', () => {
             const numbers = [10, 20, 30];
-            const result = reduce(numbers, (acc, item) => (acc + item), 5);
-            assert.equal(result, 65);
+            const result = reduce(numbers, (acc, item) => (acc + item), 0);
+            assert.equal(result, 60);
         });
         it('returns the difference of all the numbers in an array, bigger', () => {
             const numbers = [10, 20, 30];
-            const result = reduce(numbers, (acc, item) => (acc - item), 0);
-            assert.equal(result, -60);
+            const result = reduce(numbers, (acc, item) => (acc - item), 20);
+            assert.equal(result, -40);
         });
     });
 
