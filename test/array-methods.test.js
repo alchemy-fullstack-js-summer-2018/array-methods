@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map, filter, findIndex, reduce } = require('../lib/array-methods');
+const { map, filter, findIndex, reduce, every } = require('../lib/array-methods');
 
 describe('array methods', () => {
     describe('map', () => {
@@ -93,6 +93,12 @@ describe('array methods', () => {
                 const evens = numbers.every(n => n % 2 === 0);
                 assert.deepEqual(evens, true);
             });
+        });
+
+        it('takes callback and returns true if ALL callback return values are true', () => {
+            const numbers = [1, 3, 5, 7];
+            const isOdd = every(numbers, n => n % 2 === 1);
+            assert.deepEqual(isOdd, true);
         });
     });
 });
