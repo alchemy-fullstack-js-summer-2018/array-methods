@@ -85,4 +85,14 @@ describe('array methods', () => {
             assert.deepEqual(sum, 132);
         });
     });
+
+    describe('every', () => {
+        describe('assumptions', () => {
+            it('takes callback and returns true if ALL callback return values are true', () => {
+                const numbers = [2, 4, 6, 8];
+                const evens = numbers.every(n => n % 2 === 0);
+                assert.deepEqual(evens, true);
+            });
+        });
+    });
 });
