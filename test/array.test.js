@@ -15,10 +15,10 @@ describe('array methods', () => {
         assert.deepEqual(newNumbers, [4, 8]);
     });
 
-    it('findIndex: Retrieves index value of a given item/s', () => {
-        const products = [1, 2, 3, 4];
-        const productIndex = findIndex(products, (item) => {return item})
-        assert.deepEqual(productIndex, [0]);
+    it('findIndex: Retrieves index of a given item/s', () => {
+        const products = [1, 25, 60, 14];
+        const productIndex = findIndex(products, (item) => {return item > 50})
+        assert.equal(productIndex, 2);
     });
 
 });
