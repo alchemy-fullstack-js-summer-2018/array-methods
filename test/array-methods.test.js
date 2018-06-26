@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map, filter, findIndex } = require('../lib/array-methods');
+const { map, filter, findIndex, reduce } = require('../lib/array-methods');
 
 describe('array methods', () => {
 
@@ -28,4 +28,12 @@ describe('array methods', () => {
         });
         assert.equal(index, 1);
     });
+ 
+    it('Reduce', () => {
+        const arr = [1,3,5,7];
+        const reducedValue = reduce(arr, (accumulator, currentValue) => { 
+            return accumulator + currentValue;
+        });
+        assert.equal(reducedValue, 15);
+    });    
 });
