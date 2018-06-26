@@ -3,13 +3,21 @@ const { map, filter, findIndex, reduce, every, forEach } = require('../lib/array
 
 describe('array methods', () => {
 
+    function supplyIndex(index) {
+        const indices = [];
+        indices.push(index);
+    }
+
     describe('map', () => {
 
         describe('assumption', () => {
 
             it('should add 1 to each number', () => {
                 const numbers = [5, 8, 124, 0];
-                const result = numbers.map(n => n + 1);
+                const result = numbers.map((n, i) => {
+                    supplyIndex(i);
+                    return n + 1;
+                });
                 assert.deepEqual(result, [6, 9, 125, 1]);
             });
 
@@ -23,6 +31,14 @@ describe('array methods', () => {
                 const empty = [];
                 const result = empty.map(s => s * s);
                 assert.deepEqual(result, []);
+            });
+
+            it('should square each number, skipping holes', () => {
+                //eslint-disable-next-line
+                const numbers = [5, 8, , 2, 0];
+                const result = numbers.map(n => n * n);
+                //eslint-disable-next-line
+                assert.deepEqual(result, [25, 64, , 4, 0]);
             });
         });
         
@@ -43,6 +59,14 @@ describe('array methods', () => {
             const empty = [];
             const result = map(empty, s => s * s);
             assert.deepEqual(result, []);
+        });
+
+        it('should square each number, skipping holes', () => {
+            //eslint-disable-next-line
+            const numbers = [5, 8, , 2, 0];
+            const result = map(numbers, n => n * n);
+            //eslint-disable-next-line
+            assert.deepEqual(result, [25, 64, , 4, 0]);
         });
     });
 
