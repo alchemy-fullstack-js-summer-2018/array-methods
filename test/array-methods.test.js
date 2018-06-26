@@ -29,9 +29,15 @@ describe('array methods', () => {
         assert.deepEqual(index, 0);
     });
 
-    it('return value is passed as accum arg of the next fn call', () => {
+    it('return value is passed as accum arg of the next fn call without initial value', () => {
         numbers;
         const sum = reduce(numbers, (accum, item) => accum + item);
-        assert.equal(sum);
+        assert.equal(sum, 6);
+    });
+
+    it('return value is passed as accum arg of the next fn call with initial value', () => {
+        numbers;
+        const sum = reduce(numbers, (accum, item) => accum + item, 10);
+        assert.equal(sum, 16);
     });
 });
