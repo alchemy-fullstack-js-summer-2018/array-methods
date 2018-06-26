@@ -78,6 +78,11 @@ describe('array methods', () => {
                 const result = numbers.reduce((acc, item) => acc - item, 20);
                 assert.equal(result, -40);
             });
+            it('REDUCE empty array should return initial value', () => {
+                const numbers = [];
+                const result = numbers.reduce((acc, item) => acc - item, 0);
+                assert.equal(result, 0);
+            });
         });
 
         it('returns the sum of all the numbers in an array', () => {
@@ -94,6 +99,11 @@ describe('array methods', () => {
             const numbers = [10, 20, 30];
             const result = reduce(numbers, (acc, item) => (acc - item), 20);
             assert.equal(result, -40);
+        });
+        it('empty array should return initial value', () => {
+            const numbers = [];
+            const result = reduce(numbers, (acc, item) => (acc - item), 20);
+            assert.equal(result, 20);
         });
     });
 
