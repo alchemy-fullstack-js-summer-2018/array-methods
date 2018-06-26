@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map, filter, findIndex } = require('../lib/array-methods');
+const { map, filter, findIndex, reduce } = require('../lib/array-methods');
 
 describe('array methods', () => {
     describe('map', () => {
@@ -67,6 +67,12 @@ describe('array methods', () => {
                 const sum = numbers.reduce((a, b) => a + b);
                 assert.deepEqual(sum, 25);
             });
+        });
+
+        it('takes callback and, after each fn call, return value is passed as accumulator arg of next fn call', () => {
+            const numbers = [1, 3, 5, 21];
+            const sum = reduce(numbers, (a, b) => a + b);
+            assert.deepEqual(sum, 30);
         });
     });
 });
