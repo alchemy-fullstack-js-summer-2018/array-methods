@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { mapFunction, filterFunction, indexOfFunction } = require('../lib/array-methods');
+const { mapFunction, filterFunction, indexOfFunction, reduceFunction } = require('../lib/array-methods');
 
 describe('Array Methods', () => {
 
@@ -34,6 +34,21 @@ describe('Array Methods', () => {
             const arr = ['bikes', 'beers', 'cats'];
             const result = indexOfFunction(arr, (item) => item === 'dogs');
             assert.deepEqual(result, -1);
+        });
+    });
+
+    describe('.reduce()', () => {
+        
+        it('Returns final accumulator value without optional initialValue', () => {
+            const arr = [2, 4, 1];
+            const result = reduceFunction(arr, ((total, amount) => total + amount));
+            assert.deepEqual(result, 7);
+        });
+
+        it('Returns final accumulator value with optional initialValue', () => {
+            const arr = [2, 4, 1];
+            const result = reduceFunction(arr, ((total, amount) => total + amount), 10);
+            assert.deepEqual(result, 17);
         });
     });
 });
