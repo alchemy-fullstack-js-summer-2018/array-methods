@@ -63,13 +63,18 @@ describe('array methods', () => {
 
         it('returns the sum of all the numbers in an array', () => {
             const numbers = testers;
-            const result = reduce(numbers, (acc, item) => (acc + item), 0);
+            const result = reduce(numbers, (acc, item) => (acc + item));
             assert.equal(result, 15);
         });
         it('returns the sum of all the numbers in an array, bigger', () => {
             const numbers = [10, 20, 30];
-            const result = reduce(numbers, (acc, item) => (acc + item), 0);
+            const result = reduce(numbers, (acc, item) => (acc + item));
             assert.equal(result, 60);
+        });
+        it('returns the difference of all the numbers in an array, bigger', () => {
+            const numbers = [10, 20, 30];
+            const result = reduce(numbers, (acc, item) => (acc - item));
+            assert.equal(result, -40);
         });
     });
 
