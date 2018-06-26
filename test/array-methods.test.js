@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { mapFunction, filterFunction } = require('../lib/array-methods');
+const { mapFunction, filterFunction, indexOfFunction } = require('../lib/array-methods');
 
 describe('Array Methods', () => {
 
@@ -24,7 +24,9 @@ describe('Array Methods', () => {
     describe('.findIndex()', () => {
 
         it('Returns the index of the first item with a true or truthy value', () => {
-            const arr = [1, 3, 5, 7, 9, 10, 11];
+            const arr = ['bikes', 'beers', 'food', 'dogs', 'cats'];
+            const result = indexOfFunction(arr, (item) => item === 'cats');
+            assert.deepEqual(result, 4);
         });
     });
 });
