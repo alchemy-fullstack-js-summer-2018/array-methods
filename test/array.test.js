@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map, filter } = require('../lib/arrays');
+const { map, filter, findIndex } = require('../lib/arrays');
 
 
 describe('array methods', () => {
@@ -15,5 +15,10 @@ describe('array methods', () => {
         assert.deepEqual(newNumbers, [4, 8]);
     });
 
+    it('findIndex: Retrieves index value of a given item/s', () => {
+        const products = [1, 2, 3, 4];
+        const productIndex = findIndex(products, (item) => {return item})
+        assert.deepEqual(productIndex, [0]);
+    });
 
 });
