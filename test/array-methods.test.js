@@ -12,8 +12,8 @@ describe('map', () => {
 
 describe('every', () => {
     it('every item is included', () => {
-        const arr = [50, 62, 185, 70];
-        let result = every(arr, (item) => {item > 49;});
-        assert.equal(result, true);      
+        const arr = [50, 63, 185, 70, 99];
+        let result = every(arr, (item) => {return item > 49;});
+        assert.deepEqual(result, [50, 63, 185, 70, 99]);      
     });
 });
