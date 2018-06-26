@@ -96,8 +96,9 @@ Returns `undefined`.
 
 ### Test indexes
 
-All of these methods can supply the current index as the second (or third in the case of `reduce`) paramter. Test and
-implement this functionality. Since all of these methods (except reduce) have virtually the same implementation for testing whether the callback function was called with the correct index. Can you create a single function in your test file that
+All of these methods can supply the current index as the second (or third in the case of `reduce`) callback function parameter. Test and implement this functionality. 
+
+Since all of these methods (except reduce) have virtually the same implementation for testing whether the callback function was called with the correct index. Can you create a single function in your test file that
 all of the index tests (except reduce) call to test index functionality?
 
 ### Array Holes
