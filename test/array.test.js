@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map, filter, findIndex, reduce } = require('../lib/arrays');
+const { map, filter, findIndex, reduce, every } = require('../lib/arrays');
 
 
 describe('array methods', () => {
@@ -17,14 +17,20 @@ describe('array methods', () => {
 
     it('findIndex: Retrieves index of a given item', () => {
         const products = [1, 25, 60, 14];
-        const productIndex = findIndex(products, (item) => {return item > 50});
+        const productIndex = findIndex(products, (item) => {return item > 50;});
         assert.equal(productIndex, 2);
     });
 
     it('Reduce: reduces an array to a single value', () => {
         const values = [5, 10, 15];
-        const totalValue = reduce(values, (accumulator, item ) => {return accumulator + item});
+        const totalValue = reduce(values, (accumulator, item ) => {return accumulator + item;});
         assert.equal(totalValue, 30);
-    })
+    });
+
+    it('Every: tests whether all elements in the array passes the test', () => {
+        const digits = [5, 6, 7, 8];
+        const smallDigits = every(digits, (item) => {return item < 10;})
+        assert.equal(smallDigits, true);
+    });
 
 });
