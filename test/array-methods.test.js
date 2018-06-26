@@ -59,4 +59,14 @@ describe('array methods', () => {
             assert.deepEqual(index, -1);
         });
     });
+
+    describe('reduce', () => {
+        describe('assumptions', () => {
+            it('takes callback and, after each fn call, return value is passed as accumulator arg of next fn call', () => {
+                const numbers = [2, 4, 6, 8, 5];
+                const sum = numbers.reduce((a, b) => a + b);
+                assert.deepEqual(sum, 25);
+            });
+        });
+    });
 });
