@@ -37,10 +37,16 @@ describe('array methods', () => {
         });
     });
     describe('reduce', ()=> {
-        it('sum (15)', () => {
+        it('total should be 12', () => {
+            const numbers = [2, 4, 6];
+            const result = myReduce(numbers, ((a, b) => a + b));
+            assert.equal(result, 12);
+        });
+        it('total should be 15 with initialValue', () => {
             const numbers = [1, 2, 3];
             const result = myReduce(numbers, ((a, b) => a + b), 9);
             assert.equal(result, 15);
+            
         });
     });
 });
