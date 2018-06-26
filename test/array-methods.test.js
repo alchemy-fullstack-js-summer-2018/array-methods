@@ -29,13 +29,13 @@ describe('every', () => {
 const isEven = x => x % 2 === 0;
 
 describe('filter', () => {
-    it('filter out odd values', () => {
+    it('filter out large values', () => {
         const numbers = [50, 63, 185, 70, 99];
-        const even = [];
-        numbers.filter(n => {
-            even.push.isEven(n);
-            return isEven(n);
-        });
-        assert.equal(even, true);      
+        const filterOut = [];
+        for(var k = 0; k < numbers.length; k++) {
+            if(numbers[i] >= 99) {
+                filterOut.push(numbers[k]);
+            }
+        }   
     });
 });
