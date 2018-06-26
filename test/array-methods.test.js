@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map, filter } = require('../lib/array-methods');
+const { map, filter, findIndex } = require('../lib/array-methods');
 
 describe('array methods', () => {
     const numbers = [1, 2, 3];
@@ -21,5 +21,11 @@ describe('array methods', () => {
         numbers;
         const filtered = filter(numbers, n => n >= 2);
         assert.deepEqual(filtered, [2, 3]);
+    });
+
+    it('returns index of first item whose callback returns true', () => {
+        let numbers = [1, 2, , 4];
+        const index = findIndex(numbers, n => n < 3);
+        assert.deepEqual(index, 0);
     });
 });
