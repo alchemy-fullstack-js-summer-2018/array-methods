@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map, filter, findIndex, reduce, every } = require('../lib/array-methods.js');
+const { map, filter, findIndex, reduce, every, forEach } = require('../lib/array-methods.js');
 
 describe('array methods', () => {
 
@@ -180,8 +180,8 @@ describe('array methods', () => {
 
         it('should return the initial value when passed an empty array', () => {
             const empty = [];
-            const result = reduce(empty, ((c, i) => c + i), 7);
-            assert.equal(result, 7);
+            const result = reduce(empty, ((c, i) => c + i), 0);
+            assert.equal(result, 0);
         });
 
         it('should return TypeError for empty array w/ no initial value', () => {
@@ -195,7 +195,6 @@ describe('array methods', () => {
             }
         });
 
-        // TODO - account for empty array + 0 as initialValue
     });
 
     describe('every', () => {
@@ -237,6 +236,26 @@ describe('array methods', () => {
             const numbers = [];
             const result = every(numbers, n => n < 9000);
             assert.equal(result, true);
+        });
+    });
+
+    describe('forEach', () => {
+        
+        describe('assumptions', () => {
+
+            it('should execute the callback on each item', () => {
+                let numbers = [2, 3, 4, 5, 100];
+                let closure = [];
+                numbers.forEach(n => closure.push(n * 2));
+                assert.deepEqual(closure, [4, 6, 8, 10, 200]);
+            });
+        });
+
+        it('should execute the callback on each item', () => {
+            let numbers = [2, 3, 4, 5, 100];
+            let closure = [];
+            forEach(numbers, n => closure.push(n * 2));
+            assert.deepEqual(closure, [4, 6, 8, 10, 200]);
         });
     });
 });
