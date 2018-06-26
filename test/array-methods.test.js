@@ -105,5 +105,10 @@ describe('array methods', () => {
             const isOdd = every(numbers, n => n % 2 === 1);
             assert.deepEqual(isOdd, true);
         });
+        it('returns false if ONE callback return value is false', () => {
+            const numbers = [1, 3, 6, 7];
+            const isOdd = every(numbers, n => n % 2 === 1);
+            assert.deepEqual(isOdd, false);
+        });
     });
 });
