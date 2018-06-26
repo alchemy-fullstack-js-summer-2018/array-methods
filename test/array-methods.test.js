@@ -67,6 +67,11 @@ describe('array methods', () => {
                 const sum = numbers.reduce((a, b) => a + b);
                 assert.deepEqual(sum, 25);
             });
+            it('takes optional initial value', () => {
+                const numbers = [2, 4, 6, 8, 5];
+                const sum = numbers.reduce(((a, b) => a + b), 55);
+                assert.deepEqual(sum, 80);
+            });
         });
 
         it('takes callback and, after each fn call, return value is passed as accumulator arg of next fn call', () => {
