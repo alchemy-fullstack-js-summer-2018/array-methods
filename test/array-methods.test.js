@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map, filter, findIndex } = require('../lib/array-methods.js');
+const { map, filter, findIndex, reduce } = require('../lib/array-methods.js');
 
 describe('array methods', () => {
 
@@ -79,6 +79,7 @@ describe('array methods', () => {
     });
 
     describe('findIndex', () => {
+
         describe('assumption', () => {
 
             it('should find the index of the first 5 (3)', () => {
@@ -95,7 +96,7 @@ describe('array methods', () => {
         });
         
         it('should find the index of 5 (3)', () => {
-            const numbers = [2, 6, 8, 5, 9];
+            const numbers = [2, 6, 8, 5, 5];
             const result = findIndex(numbers, n => n === 5);
             assert.equal(result, 3);
         });
@@ -105,6 +106,26 @@ describe('array methods', () => {
             const result = findIndex(numbers, n => n > 7);
             assert.equal(result, -1);
         });
+    });
+
+    describe('reduce', () => {
+
+        describe('assumption', () => {
+
+            it('should total up all the items in the array', () => {
+                const numbers = [1, 2, 3, 4, 5];
+                const result = numbers.reduce((c, i) => c + i);
+                assert.equal(result, 15);
+            });
+            
+        });
+
+        it('should total up all the items in the array', () => {
+            const numbers = [1, 2, 3, 4, 5];
+            const result = reduce(numbers, (c, i) => c + i);
+            assert.equal(result, 15);
+        });
+
     });
 
 });
