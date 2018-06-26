@@ -86,12 +86,24 @@ describe('array methods', () => {
                 const result = numbers.findIndex(n => n === 5);
                 assert.equal(result, 3);
             });
-        });
 
+            it('should return -1 when nothing is found', () => {
+                const numbers = [1, 3, 5, 7];
+                const result = numbers.findIndex(n => n > 7);
+                assert.equal(result, -1);
+            });
+        });
+        
         it('should find the index of 5 (3)', () => {
             const numbers = [2, 6, 8, 5, 9];
             const result = findIndex(numbers, n => n === 5);
             assert.equal(result, 3);
+        });
+
+        it('should return -1 when nothing is found', () => {
+            const numbers = [1, 3, 5, 7];
+            const result = findIndex(numbers, n => n > 7);
+            assert.equal(result, -1);
         });
     });
 
