@@ -23,7 +23,7 @@ describe('array methods', () => {
 
     it('Reduce: reduces an array to a single value', () => {
         const values = [5, 10, 15];
-        const totalValue = reduce(values, (accumulator, items ) => {return accumulator + items});
+        const totalValue = reduce(values, (accumulator, item ) => {return accumulator + item});
         assert.equal(totalValue, 30);
     })
 
