@@ -111,4 +111,15 @@ describe('array methods', () => {
             assert.deepEqual(isOdd, false);
         });
     });
+
+    describe('forEach', () => {
+        describe('assumptions', () => {
+            it('takes callback and calls that function for each item in array', () => {
+                const numbers = [2, 4, 6, 8];
+                const copy = [];
+                numbers.forEach(number => copy.push(number));
+                assert.deepEqual(copy, numbers);
+            });
+        });
+    });
 });
