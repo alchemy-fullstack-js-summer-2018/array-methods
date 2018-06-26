@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { mapFunction, filterFunction, indexOfFunction, reduceFunction } = require('../lib/array-methods');
+const { mapFunction, filterFunction, indexOfFunction } = require('../lib/array-methods');
 
 describe('Array Methods', () => {
 
@@ -24,19 +24,16 @@ describe('Array Methods', () => {
 
     describe('.findIndex()', () => {
 
-        it('Returns the index of the first item with a true or truthy value', () => {
-            const arr = ['bikes', 'beers', 'food', 'dogs', 'cats'];
-            const result = indexOfFunction(arr, (item) => item.indexOf('cats'));
-            assert.deepEqual(result, 4);
+        it('Returns the index of the first true or truthy item in the array', () => {
+            const arr = [1, 2, 3, 4, 5, 6];
+            const result = indexOfFunction(arr, (item) => item >= 3);
+            assert.deepEqual(result, 2);
         });
-    });
 
-    describe('.reduce()', () => {
-        
-        it('Returns final accumulator value', () => {
-            const arr = [2, 4, 1];
-            const result = reduceFunction(arr, (item) => item.reduce((total, amount) => total + amount));
-            assert.deepEqual(result, 7);
+        it('Returns -1 if the item is not found', () => {
+            const arr = ['bikes', 'beers', 'cats'];
+            const result = indexOfFunction(arr, (item) => item === 'dogs');
+            assert.deepEqual(result, -1);
         });
     });
 });
