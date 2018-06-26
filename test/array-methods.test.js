@@ -79,5 +79,10 @@ describe('array methods', () => {
             const sum = reduce(numbers, (a, b) => a + b);
             assert.deepEqual(sum, 30);
         });
+        it('takes optional initial value', () => {
+            const numbers = [1, 3, 5, 21, 85];
+            const sum = reduce(numbers, ((a, b) => a + b), 17);
+            assert.deepEqual(sum, 132);
+        });
     });
 });
