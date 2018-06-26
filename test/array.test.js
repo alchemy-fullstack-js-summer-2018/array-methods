@@ -11,24 +11,20 @@ describe('array methods', () => {
 
     it('Filter: Selecting specific items from an array', () => {
         const numbers = [1, 4, 8];
-        const newNumbers = filter(numbers, (item) => {return item > 3;})
+        const newNumbers = filter(numbers, (item) => {return item > 3;});
         assert.deepEqual(newNumbers, [4, 8]);
     });
 
-    it('findIndex: Retrieves index of a given item/s', () => {
+    it('findIndex: Retrieves index of a given item', () => {
         const products = [1, 25, 60, 14];
-        const productIndex = findIndex(products, (item) => {return item > 50})
+        const productIndex = findIndex(products, (item) => {return item > 50});
         assert.equal(productIndex, 2);
     });
 
     it('Reduce: reduces an array to a single value', () => {
         const values = [5, 10, 15];
-        const totalValue = reduce(values, item) => {};
-
-        reduce(array, callback [, initialValue])
-        (accumulator, item) => {}
-
-        assert.equal(totalValue, 20);
-    });
+        const totalValue = reduce(values, (accumulator, items ) => {return accumulator + items});
+        assert.equal(totalValue, 30);
+    })
 
 });
