@@ -118,14 +118,37 @@ describe('array methods', () => {
                 assert.equal(result, 15);
             });
             
-        });
+            it('should total up all the items in the array, starting at the initial value', () => {
+                const numbers = [1, 2, 3, 4, 5];
+                const result = numbers.reduce(((c, i) => c + i), 10);
+                assert.equal(result, 25);
+            });
 
+            it('should total up all the items in the array', () => {
+                const numbers = [1, 2, 3, 4, 5];
+                const result = numbers.reduce((c, i) => c - i);
+                assert.equal(result, -13);
+            });
+            
+        });
+        
         it('should total up all the items in the array', () => {
             const numbers = [1, 2, 3, 4, 5];
             const result = reduce(numbers, (c, i) => c + i);
             assert.equal(result, 15);
         });
+        
+        it('should total up all the items in the array, starting at the initial value', () => {
+            const numbers = [1, 2, 3, 4, 5];
+            const result = reduce(numbers, ((c, i) => c + i), 10);
+            assert.equal(result, 25);
+        });
 
+        it('should total up all the items in the array', () => {
+            const numbers = [1, 2, 3, 4, 5];
+            const result = reduce(numbers, (c, i) => c - i);
+            assert.equal(result, -13);
+        });
     });
 
 });
