@@ -47,6 +47,12 @@ describe ('array methods', () => {
             const result = filter(numbers, i => i % 2 === 0);
             assert.deepEqual(result, [2, 4, 8]);
         });
+
+        it('returns -1 because there is no matches', () => {
+            const numbers = [3, 5, 7];
+            const result = filter(numbers, i => i % 2 === 0);
+            assert.equal(result, -1);
+        });
     });
 
     describe('findIndex', () => {
