@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { mapping, filtering, findingIndex, reducing } = require('../lib/array-methods');
+const { mapping, filtering, findingIndex, reducing, everying } = require('../lib/array-methods');
 
 describe('array methods', () => {
     
@@ -83,6 +83,14 @@ describe('array methods', () => {
                 });
                 assert.equal(total, -15);
             });
+        });
+    });
+
+    describe('everying', () => {
+
+        it('returns true if every element < 10', () => {
+            let result = everying(numbers, el =>  el < 10);
+            assert.equal(result, true);
         });
     });
 
