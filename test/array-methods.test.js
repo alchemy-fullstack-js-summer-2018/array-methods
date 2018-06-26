@@ -112,7 +112,7 @@ describe('array methods', () => {
 
         describe('assumption', () => {
 
-            it('should total up all the items in the array', () => {
+            it('should add up all the items in the array', () => {
                 const numbers = [1, 2, 3, 4, 5];
                 const result = numbers.reduce((c, i) => c + i);
                 assert.equal(result, 15);
@@ -124,15 +124,37 @@ describe('array methods', () => {
                 assert.equal(result, 25);
             });
 
-            it('should total up all the items in the array', () => {
-                const numbers = [1, 2, 3, 4, 5];
+            it('should subtract up all the items in the array, starting at the first item of the array', () => {
+                const numbers = [5, 4, 3, 2, 1];
                 const result = numbers.reduce((c, i) => c - i);
-                assert.equal(result, -13);
+                assert.equal(result, -5);
+            });
+
+            it('should return the only item of the array, regardless of callback', () => {
+                const numbers = [6];
+                const result = numbers.reduce((c, i) => c * i);
+                assert.equal(result, 6);
+            });
+
+            it('should return the initial value when passed an empty array', () => {
+                const empty = [];
+                const result = empty.reduce(((c, i) => c + i), 7);
+                assert.equal(result, 7);
             });
             
+            it('should return TypeError for empty array', () => {
+                try {
+                    const empty = [];
+                    empty.reduce((c, i) => c + i);
+                    assert.fail('Should have thrown error');
+                }
+                catch(err) {
+                    assert.equal(err.message, 'Reduce of empty array with no initial value');
+                }
+            });
         });
         
-        it('should total up all the items in the array', () => {
+        it('should add up all the items in the array', () => {
             const numbers = [1, 2, 3, 4, 5];
             const result = reduce(numbers, (c, i) => c + i);
             assert.equal(result, 15);
@@ -144,10 +166,33 @@ describe('array methods', () => {
             assert.equal(result, 25);
         });
 
-        it('should total up all the items in the array', () => {
-            const numbers = [1, 2, 3, 4, 5];
+        it('should subtract up all the items in the array, starting at the first item of the array', () => {
+            const numbers = [5, 4, 3, 2, 1];
             const result = reduce(numbers, (c, i) => c - i);
-            assert.equal(result, -13);
+            assert.equal(result, -5);
+        });
+
+        it('should return the only item of the array, regardless of callback', () => {
+            const numbers = [6];
+            const result = reduce(numbers, (c, i) => c * i);
+            assert.equal(result, 6);
+        });
+
+        it('should return the initial value when passed an empty array', () => {
+            const empty = [];
+            const result = reduce(empty, ((c, i) => c + i), 7);
+            assert.equal(result, 7);
+        });
+
+        it('should return TypeError for empty array w/ no initial value', () => {
+            try {
+                const empty = [];
+                empty.reduce((c, i) => c + i);
+                assert.fail('Should have thrown error');
+            }
+            catch(err) {
+                assert.equal(err.message, 'Reduce of empty array with no initial value');
+            }
         });
     });
 
