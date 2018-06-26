@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { mapFunction, filterFunction, indexOfFunction } = require('../lib/array-methods');
+const { mapFunction, filterFunction, indexOfFunction, reduceFunction } = require('../lib/array-methods');
 
 describe('Array Methods', () => {
 
@@ -28,6 +28,15 @@ describe('Array Methods', () => {
             const arr = ['bikes', 'beers', 'food', 'dogs', 'cats'];
             const result = indexOfFunction(arr, (item) => item.indexOf('cats'));
             assert.deepEqual(result, 4);
+        });
+    });
+
+    describe('.reduce()', () => {
+        
+        it('Returns final accumulator value', () => {
+            const arr = [2, 4, 1];
+            const result = reduceFunction(arr, (item) => item.reduce((total, amount) => total + amount));
+            assert.deepEqual(result, 7);
         });
     });
 });
