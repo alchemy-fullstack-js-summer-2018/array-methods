@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { some, map } = require('../lib/array-methods');
+const { some, map, filter } = require('../lib/array-methods');
 
 describe('array methods', () => {
 //marty's in class some example
@@ -62,6 +62,14 @@ describe('array methods', () => {
             const numbers = [1, 2, 3, 4];
             const result = map(numbers, (n) => n * n);
             assert.deepEqual(result, [1, 4, 9, 16]);
+        });
+    });
+
+    describe('filter', () => {
+        it('returns new array of true items', () => {
+            const numbers = [1, 2, 3, 4, 5, 6];
+            const result = filter(numbers, (n) => n < 4);
+            assert.deepEqual(result, [1, 2, 3]);
         });
     });
 });
