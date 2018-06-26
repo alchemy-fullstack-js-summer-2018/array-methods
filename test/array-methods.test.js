@@ -4,7 +4,7 @@ const myMap = aMeth.myMap;
 const myFilter = aMeth.myFilter;
 const myFindIndex = aMeth.myFindIndex;
 const myReduce = aMeth.myReduce;
-// const myEvery = aMeth.myEvery;
+const myEvery = aMeth.myEvery;
 
 describe('array methods', () => {
     describe('map function', () => {
@@ -36,7 +36,7 @@ describe('array methods', () => {
             assert.equal(result, -1);
         });
     });
-    describe('reduce', ()=> {
+    describe('reduce', () => {
         it('total should be 12', () => {
             const numbers = [2, 4, 6];
             const result = myReduce(numbers, ((a, b) => a + b));
@@ -48,5 +48,14 @@ describe('array methods', () => {
             assert.equal(result, 15);
             
         });
+    });
+    //this test is in progress btu want to submit lab
+    describe('every checks all pass test, stops at first false', () => {
+        it('should return true that all numbers are less than 4', () => {
+            const numbers = [1, 2, 3];
+            const result = myEvery(numbers, x => x < 4); 
+            assert.deepEqual(result, true);
+        });
+
     });
 });
