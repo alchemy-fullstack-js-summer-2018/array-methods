@@ -26,16 +26,19 @@ describe('every', () => {
 //     });
 // });
 
-const isEven = x => x % 2 === 0;
+//TO-DO: REMOVE BELOW LINE FROM CODE IF LEFT UNUSED
+//const isEven = x => x % 2 === 0;
 
 describe('filter', () => {
     it('filter out large values', () => {
-        const numbers = [50, 63, 185, 70, 99];
+        const numbers = [50, 133, 185, 70, 99];
         const filterOut = [];
         for(var k = 0; k < numbers.length; k++) {
-            if(numbers[i] >= 99) {
+            if(numbers[k] >= 99) {
                 filterOut.push(numbers[k]);
             }
         }   
+        let result = filter(numbers, (item) => {return item >= 99;});
+        assert.deepEqual(result, [133, 185, 99]);
     });
 });
