@@ -22,8 +22,10 @@ describe('array methods', () => {
     it('FindIndex', () => {
         const arr1 = [1, 4, 6, 7];
         const index = findIndex(arr1, (item) => {
-            return (item);
+            if(item % 2 === 0) {
+                return item;
+            }
         });
-        assert.equal(index, 4);
+        assert.equal(index, 1);
     });
 });
