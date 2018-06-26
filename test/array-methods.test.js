@@ -41,12 +41,22 @@ describe('array methods', () => {
                 const index = numbers.findIndex(n => n > 10);
                 assert.deepEqual(index, 2);
             });
+            it('returns -1 when no truthy values found', () => {
+                const numbers = [1, 4, 11, 15];
+                const index = numbers.findIndex(n => n > 16);
+                assert.deepEqual(index, -1);
+            });
         });
 
         it('takes a callback and returns first item whose callback returned truthy', () => {
             const numbers = [1, 3, 10, 7, 5, 72, 7, 9];
             const index = findIndex(numbers, n => n === 7);
             assert.deepEqual(index, 3);
+        });
+        it('returns -1 when no truthy values found', () => {
+            const numbers = [1, 3, 10, 7, 5, 72, 7, 9];
+            const index = findIndex(numbers, n => n === 8);
+            assert.deepEqual(index, -1);
         });
     });
 });
