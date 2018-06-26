@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map, filter, findIndex, reduce } = require('../lib/array-methods.js');
+const { map, filter, findIndex, reduce, every } = require('../lib/array-methods.js');
 
 describe('array methods', () => {
 
@@ -136,10 +136,10 @@ describe('array methods', () => {
                 assert.equal(result, 6);
             });
 
-            it('should return the initial value when passed an empty array', () => {
+            it('should return the initial value (0) when passed an empty array', () => {
                 const empty = [];
-                const result = empty.reduce(((c, i) => c + i), 7);
-                assert.equal(result, 7);
+                const result = empty.reduce(((c, i) => c + i), 0);
+                assert.equal(result, 0);
             });
             
             it('should return TypeError for empty array', () => {
@@ -194,6 +194,37 @@ describe('array methods', () => {
                 assert.equal(err.message, 'Reduce of empty array with no initial value');
             }
         });
+
+        // TODO - account for empty array + 0 as initialValue
     });
 
+    describe('every', () => {
+
+        describe('assumptions', () => {
+
+            it('should return true for every item matching', () => {
+                const numbers = [4, 5, 6, 7];
+                const result = numbers.every(n => n > 3);
+                assert.equal(result, true);
+            });
+            
+            it('should return true for any callback given an empty array', () => {
+                const numbers = [];
+                const result = numbers.every(n => n < 9000);
+                assert.equal(result, true);
+            });
+        });
+
+        it('should return true for every item matching', () => {
+            const numbers = [4, 5, 6, 7];
+            const result = every(numbers, n => n > 3);
+            assert.equal(result, true);
+        });
+        
+        it('should return true for any callback given an empty array', () => {
+            const numbers = [];
+            const result = every(numbers, n => n < 9000);
+            assert.equal(result, true);
+        });
+    });
 });
