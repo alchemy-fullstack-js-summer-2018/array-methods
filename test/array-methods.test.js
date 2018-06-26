@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map, filter, findIndex, reduce } = require('../lib/array-methods');
+const { map, filter, findIndex, reduce, every } = require('../lib/array-methods');
 
 describe('array methods', () => {
 
@@ -35,5 +35,17 @@ describe('array methods', () => {
             return accumulator + currentValue;
         });
         assert.equal(reducedValue, 16);
-    });    
+    }); 
+    
+    it('Every', () => {
+        const arr = [2,4,6,8];
+        let result = every(arr, (item) => {
+            if(item % 2 === 0) {
+                return true;
+            }
+            else {
+                return false;}
+        });
+        assert.equal(result, true);
+    });
 });
