@@ -2,7 +2,7 @@ const assert = require('assert');
 const aMeth = require('../lib/array-methods');
 const myMap = aMeth.myMap;
 const myFilter = aMeth.myFilter;
-// const myFindIndex = aMeth.myFindIndex;
+const myFindIndex = aMeth.myFindIndex;
 // const myReduce = aMeth.myReduce;
 // const myEvery = aMeth.myEvery;
 
@@ -24,6 +24,13 @@ describe('array methods', () => {
             assert.deepEqual(result, [3]);
             
         });
-        
+    });
+    
+    describe('find index', () => {
+        it('find index of 2 which is 1', () => {
+            const numbers = [1, 2, 3];
+            const result = myFindIndex(numbers, x => x === 2);
+            assert.equal(result, 1);
+        });
     });
 });
