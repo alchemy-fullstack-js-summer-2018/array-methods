@@ -27,10 +27,10 @@ describe('array methods', () => {
         assert.equal(totalValue, 30);
     });
 
-    it('Every: tests whether all elements in the array passes the test', () => {
-        const digits = [5, 6, 7, 8];
-        const smallDigits = every(digits, (item) => {return item < 10;})
-        assert.equal(smallDigits, true);
-    });
+    // it('Every: tests whether all elements in the array passes the test', () => {
+    //     const digits = [5, 6, 7, 8];
+    //     const smallDigits = every(digits, (item) => {return item < 10;})
+    //     assert.equal(smallDigits, true);
+    // });
 
 });
