@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { some, map, filter, findIndex, reduce } = require('../lib/array-methods');
+const { some, map, filter, findIndex, reduce, every } = require('../lib/array-methods');
 
 describe('array methods', () => {
 //marty's in class some example
@@ -91,6 +91,19 @@ describe('array methods', () => {
             const numbers = [1, 5, 4, 2, 3];
             const result = reduce(numbers, (a, b) => (a + b));
             assert.deepEqual(result, 15);
+        });
+    });
+    describe('every', () => {
+        it('returns true if every element described by the callback passes', () => {
+            const numbers = [5, 6, 7, 8];
+            const result = every(numbers, (n) => n > 4);
+            assert.equal(result, true);
+        });
+
+        it('returns false if one element fails callback check', () => {
+            const numbers = [5, 6, 7, 8];
+            const result = every(numbers, (n) => n < 6);
+            assert.equal(result, false);
         });
     });
 });
