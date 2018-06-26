@@ -207,6 +207,12 @@ describe('array methods', () => {
                 const result = numbers.every(n => n > 3);
                 assert.equal(result, true);
             });
+
+            it('should return false for any item failing the callback', () => {
+                const numbers = [4, 5, 6, 7];
+                const result = numbers.every(n => n === 4);
+                assert.equal(result, false);
+            });
             
             it('should return true for any callback given an empty array', () => {
                 const numbers = [];
@@ -219,6 +225,12 @@ describe('array methods', () => {
             const numbers = [4, 5, 6, 7];
             const result = every(numbers, n => n > 3);
             assert.equal(result, true);
+        });
+
+        it('should return false for any item failing the callback', () => {
+            const numbers = [4, 5, 6, 7];
+            const result = every(numbers, n => n === 4);
+            assert.equal(result, false);
         });
         
         it('should return true for any callback given an empty array', () => {
