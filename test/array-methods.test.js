@@ -3,7 +3,8 @@ const { map,
     filter, 
     findIndex, 
     reduce, 
-    every } = require('../lib/array-methods');
+    every,
+    forEach } = require('../lib/array-methods');
 
 describe('array methods', () => {
     let testers = [1, 3, 5, 6];
@@ -73,8 +74,8 @@ describe('array methods', () => {
         });
         it('returns the difference of all the numbers in an array, bigger', () => {
             const numbers = [10, 20, 30];
-            const result = reduce(numbers, (acc, item) => (acc - item), 0);
-            assert.equal(result, -60);
+            const result = reduce(numbers, (acc, item) => (acc - item), 57);
+            assert.equal(result, -3);
         });
     });
 
@@ -90,6 +91,22 @@ describe('array methods', () => {
             const numbers = testers;
             const result = every(numbers, n => (n > 4));
             assert.equal(result, false);
+        });
+    });
+
+    describe('forEach', () => {
+
+        it('pushes items in an array', () => {
+            const numbers = testers;
+            const closure = [];
+            forEach(numbers, item => (closure.push(item)));
+            assert.deepEqual(closure, [1, 3, 5, 6]);
+        });
+        it('doubles items and then pushes them into an array', () => {
+            const numbers = testers;
+            const closure = [];
+            forEach(numbers, item => (closure.push(item * 2)));
+            assert.deepEqual(closure, [2, 6, 10, 12]);
         });
     });
 });
