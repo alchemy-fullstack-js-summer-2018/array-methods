@@ -33,8 +33,14 @@ describe('array methods', () => {
         it('return -1 if nothing found', () => {
             const numbers = [1, 2, 3];
             const result = myFindIndex(numbers, x => x > 3);
-            assert.deepEqual(result, -1);
+            assert.equal(result, -1);
         });
     });
-    describe()
+    describe('reduce', ()=> {
+        it('sum (15)', () => {
+            const numbers = [1, 2, 3];
+            const result = myReduce(numbers, ((a, b) => a + b), 9);
+            assert.equal(result, 15);
+        });
+    });
 });
