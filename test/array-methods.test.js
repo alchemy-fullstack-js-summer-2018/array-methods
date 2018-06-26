@@ -17,7 +17,7 @@ describe('Array Methods', () => {
         it('Returns the new array of "filtered" items', () => {
             const arr = [1, 3, 5, 7, 9, 10, 11];
             const result = filterFunction(arr, (item) => item >= 7);
-            assert.eql(result, [7, 9, 10, 11]);
+            assert.deepEqual(result, [7, 9, 10, 11]);
         });
     });
 });
