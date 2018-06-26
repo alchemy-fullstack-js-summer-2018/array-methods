@@ -3,6 +3,7 @@ const { mapFunction, filterFunction, indexOfFunction } = require('../lib/array-m
 
 describe('Array Methods', () => {
 
+
     describe('.map()', () => {
 
         it('Returns new array mapped from original array', () => {
@@ -25,7 +26,7 @@ describe('Array Methods', () => {
 
         it('Returns the index of the first item with a true or truthy value', () => {
             const arr = ['bikes', 'beers', 'food', 'dogs', 'cats'];
-            const result = indexOfFunction(arr, (item) => item === 'cats');
+            const result = indexOfFunction(arr, (item) => item.indexOf('cats'));
             assert.deepEqual(result, 4);
         });
     });
