@@ -11,12 +11,24 @@ describe ('array methods', () => {
                 const result = numbers.map(n => n + 1);
                 assert.deepEqual(result, [4, 5, 6]);
             });
+
+            it('returns same length as original array', () => {
+                const numbers = [1, 2, 3, 4];
+                const result = numbers.map(i => i).length;
+                assert.equal(result, 4);
+            });
         });
 
         it('returns each value in each array position by one', () => {
             const numbers = [3, 4, 5];
             const result = map(numbers, i => i + 1);
             assert.deepEqual(result, [4, 5, 6]);
+        });
+
+        it('returns same length as original array', () => {
+            const numbers = [1, 2, 3, 4];
+            const result = map(numbers, i => i).length;
+            assert.equal(result, 4);
         });
     });
 
