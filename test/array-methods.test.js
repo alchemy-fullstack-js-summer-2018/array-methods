@@ -75,8 +75,9 @@ describe('array methods', () => {
 
         describe('assumption', () => {
 
-            it('should extract all numbers greater than 10', () => {
-                const numbers = [0, 5, 10, 15, 20];
+            it('should extract all numbers greater than 10, skipping holes', () => {
+                //eslint-disable-next-line
+                const numbers = [0, 5, 10, 15, , 20];
                 const result = numbers.filter(n => n > 10);
                 assert.deepEqual(result, [15, 20]);
             });
@@ -88,8 +89,9 @@ describe('array methods', () => {
             });
         });
         
-        it('should extract all numbers greater than 10', () => {
-            const numbers = [0, 5, 10, 15, 20];
+        it('should extract all numbers greater than 10, skipping holes', () => {
+            //eslint-disable-next-line
+            const numbers = [0, 5, 10, 15, , 20];
             const result = filter(numbers, n => n > 10);
             assert.deepEqual(result, [15, 20]);
         });
@@ -106,10 +108,11 @@ describe('array methods', () => {
 
         describe('assumption', () => {
 
-            it('should find the index of the first 5 (3)', () => {
-                const numbers = [2, 6, 8, 5, 5];
+            it('should find the index of the first 5 (4)', () => {
+                //eslint-disable-next-line
+                const numbers = [, 2, 6, 8, 5, 5];
                 const result = numbers.findIndex(n => n === 5);
-                assert.equal(result, 3);
+                assert.equal(result, 4);
             });
 
             it('should return -1 when nothing is found', () => {
@@ -119,10 +122,11 @@ describe('array methods', () => {
             });
         });
         
-        it('should find the index of 5 (3)', () => {
-            const numbers = [2, 6, 8, 5, 5];
+        it('should find the index of 5 (5)', () => {
+            //eslint-disable-next-line
+            const numbers = [, 2, 6, 8, 5, 5];
             const result = findIndex(numbers, n => n === 5);
-            assert.equal(result, 3);
+            assert.equal(result, 5);
         });
 
         it('should return -1 when nothing is found', () => {
