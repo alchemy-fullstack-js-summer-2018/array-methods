@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map, filter, findIndex } = require('../lib/array-methods');
+const { map, filter, findIndex, reduce } = require('../lib/array-methods');
 
 describe ('array methods', () => {
 
@@ -62,6 +62,19 @@ describe ('array methods', () => {
 
     describe('reduce', () => {
         
-        describe('assumptions', () => {})
+        describe('assumptions', () => {
+            it('returns the sum of an array', () => {
+                const numbers = [1, 2, 3, 4];
+                const result = numbers.reduce((a, c) => a + c);
+                assert.equal(result, 10);
+
+            });
+        });
+
+        it('returns the sum of an array', () => {
+            const numbers = [1, 2, 3, 4];
+            const result = reduce(numbers, (a, c) => a + c);
+            assert.equal(result, 10);
+        });
     });
 });
