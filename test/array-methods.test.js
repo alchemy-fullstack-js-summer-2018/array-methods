@@ -67,11 +67,12 @@ describe('array methods', () => {
 
     describe('filter', () => {
         it('returns new array of true items', () => {
-            const numbers = [1, 2, 3, 4, 5, 6];
+            const numbers = [1, , , 2, 3, 4, 5, 6];
             const result = filter(numbers, (n) => n < 4);
             assert.deepEqual(result, [1, 2, 3]);
         });
     });
+
     describe('findIndex', () => {
         it('returns first truthy item in array', () => {
             const numbers = [1, 2, 3, 4, 5];
