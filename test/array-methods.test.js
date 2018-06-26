@@ -1,10 +1,10 @@
 const assert = require('assert');
-const { mapping, filtering, findingIndex } = require('../lib/array-methods');
+const { mapping, filtering, findingIndex, reducing } = require('../lib/array-methods');
 
 describe('array methods', () => {
     
-    const numbers = [0, 1, , 2, 3, 4, 5];
-    const strings = ['a', 'b', 'c',,, 'e'];
+    const numbers = [0, 1, 2, 3, 4, 5];
+    const strings = ['a', 'b', 'c', 'e'];
 
     describe('mapping', () => {
         
@@ -63,7 +63,26 @@ describe('array methods', () => {
 
         describe('assumption', () => {
 
-            it('returns sum of numbers in array')
+            it('returns sum of numbers in array', () => {
+                let sum = numbers.reduce(((a, c) => a + c));
+                assert.equal(sum, 15);
+            });
+        });
+        describe('testing reducing', () => {
+
+            it('returns sum', () => {
+                let sum = reducing(numbers, (a, c) => {
+                    return a + c;
+                }, 10);
+                assert.equal(sum, 25);
+            });
+
+            it('returns result', () => {
+                let total = reducing(numbers, (a, c) => {
+                    return a - c;
+                });
+                assert.equal(total, -15);
+            });
         });
     });
 
