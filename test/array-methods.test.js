@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map, every, filter, index } = require('../lib/array-methods');
+const { map, every, filter, index, reduce } = require('../lib/array-methods');
 
 describe('map', () => {
     it('new array matches original array', () => {
@@ -26,9 +26,6 @@ describe('index', () => {
     });
 });
 
-//TO-DO: REMOVE BELOW LINE FROM CODE IF LEFT UNUSED
-//const isEven = x => x % 2 === 0;
-
 describe('filter', () => {
     it('filter out large values', () => {
         const numbers = [50, 133, 185, 70, 99];
@@ -40,5 +37,13 @@ describe('filter', () => {
         }   
         let result = filter(numbers, (item) => {return item >= 99;});
         assert.deepEqual(result, [133, 185, 99]);
+    });
+});
+
+describe('reduce', () => {
+    it('reduce array to single value', () => {
+        const arr = [50, 50, 50, 10];
+        let result = reduce(arr, (total, num) => total + num);
+        assert.equal(result, [160]);
     });
 });
