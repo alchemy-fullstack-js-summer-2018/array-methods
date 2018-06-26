@@ -93,6 +93,11 @@ describe('array methods', () => {
                 const evens = numbers.every(n => n % 2 === 0);
                 assert.deepEqual(evens, true);
             });
+            it('returns false if ONE callback return value is false', () => {
+                const numbers = [2, 5, 6, 8];
+                const evens = numbers.every(n => n % 2 === 0);
+                assert.deepEqual(evens, false);
+            });
         });
 
         it('takes callback and returns true if ALL callback return values are true', () => {
