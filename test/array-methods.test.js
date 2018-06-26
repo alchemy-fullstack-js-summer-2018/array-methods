@@ -39,13 +39,7 @@ describe('array methods', () => {
     
     it('Every', () => {
         const arr = [2,4,6,8];
-        let result = every(arr, (item) => {
-            if(item % 2 === 0) {
-                return true;
-            }
-            else {
-                return false;}
-        });
+        let result = every(arr, (item) => item % 2 === 0);
         assert.equal(result, true);
     });
 });
