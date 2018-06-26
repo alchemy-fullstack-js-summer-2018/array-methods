@@ -21,9 +21,13 @@ describe('array methods', () => {
         assert.equal(productIndex, 2);
     });
 
-    it('Reduce: reduces the array to a single value', () => {
+    it('Reduce: reduces an array to a single value', () => {
         const values = [5, 10, 15];
-        const totalValue = reduce(values, (item) => {return item})
+        const totalValue = reduce(values, item) => {};
+
+        reduce(array, callback [, initialValue])
+        (accumulator, item) => {}
+
         assert.equal(totalValue, 20);
     });
 
