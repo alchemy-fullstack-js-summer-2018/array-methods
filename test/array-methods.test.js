@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map } = require('../lib/array-methods');
+const { map, filter } = require('../lib/array-methods');
 
 describe('array methods', () => {
 
@@ -16,6 +16,6 @@ describe('array methods', () => {
         const arr2 = filter(arr1, (item) => {
             return item >= 5;
         });
-        assert.equal(arr2, [5,9]);
+        assert.deepEqual(arr2, [5,9]);
     });
 });
