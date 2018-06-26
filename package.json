@@ -1,0 +1,31 @@
+{
+  "name": "array-methods",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "npm run test:mocha",
+    "test:mocha": "mocha",
+    "start": "npm run test:mocha -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easton-john/array-methods.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/easton-john/array-methods/issues"
+  },
+  "homepage": "https://github.com/easton-john/array-methods#readme",
+  "devDependencies": {
+    "eslint": "^5.0.0",
+    "mocha": "^5.2.0"
+  }
+}
