@@ -20,4 +20,11 @@ describe('Array Methods', () => {
             assert.deepEqual(result, [7, 9, 10, 11]);
         });
     });
+
+    describe('.findIndex()', () => {
+
+        it('Returns the index of the first item with a true or truthy value', () => {
+            const arr = [1, 3, 5, 7, 9, 10, 11];
+        });
+    });
 });
