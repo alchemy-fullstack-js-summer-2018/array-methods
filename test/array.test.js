@@ -23,13 +23,13 @@ describe('array methods', () => {
 
     it('Reduce: reduces an array to a single value', () => {
         const values = [5, 10, 15];
-        const totalValue = reduce(values, (accumulator, item ) => {return accumulator + item;});
+        const totalValue = reduce(values, (accumulator, item) => {return accumulator + item;});
         assert.equal(totalValue, 30);
     });
 
     it('Every: tests whether all elements in the array passes the test', () => {
         const digits = [5, 6, 7, 8];
-        let smallDigits = every(digits, (item) => {return item < 10;})
+        let smallDigits = every(digits, (item) => {return item < 10;});
         assert.equal(smallDigits, true);
     });
 
