@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.0.1",
+    "mocha": "^5.2.0"
+  },
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
@@ -19,9 +28,5 @@
   "bugs": {
     "url": "https://github.com/Quintam26/array-methods/issues"
   },
-  "homepage": "https://github.com/Quintam26/array-methods#readme",
-  "devDependencies": {
-    "eslint": "^5.0.0",
-    "mocha": "^5.2.0"
-  }
+  "homepage": "https://github.com/Quintam26/array-methods#readme"
 }
