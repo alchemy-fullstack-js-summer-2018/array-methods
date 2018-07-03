@@ -55,8 +55,8 @@ describe('array methods', () => {
     describe('every array requirement', () => {
         it('array values should meet requirement', () => {
             const numbers = [1, 2, 3];
-            const every = numbers.every(x => x <= 3);
-            assert.deepEqual(every, true);
+            const resultOfEvery = every(numbers, x => x <= 3);
+            assert.deepEqual(resultOfEvery, true);
         });
     });
 });
