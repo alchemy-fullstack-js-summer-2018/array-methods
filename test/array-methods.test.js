@@ -51,9 +51,9 @@ describe('array methods', () => {
     });
     //this test is in progress btu want to submit lab
     describe('every checks all pass test, stops at first false', () => {
-        it('should return true that all numbers are less than 4', () => {
+        it('should return true that all numbers are less than or equal to 3', () => {
             const numbers = [1, 2, 3];
-            const result = myEvery(numbers, x => x < 4); 
+            const result = myEvery(numbers, x => x <= 3); 
             assert.deepEqual(result, true);
         });
 
